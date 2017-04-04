@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="header :: 'head'">
+
+
+
+</head>
+
+<body>
+
+	<div th:include="header :: 'header'"></div>
+
+	<h1>All Universitas</h1>
+
+	
+
+
+	<table id="tables" class="display" width="100%" cellspacing="0">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nama</th>
+				<th>Menu</th>
+
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<th>ID</th>
+				<th>Nama</th>
+				<th>Menu</th>
+
+			</tr>
+		</tfoot>
+		<div th:each="univ,iterationStatus:${banyakUniv}">
+		
+		<tr>
+			<td th:text="${univ.kodeUniv}"></td>
+			<td th:text="${univ.namaUniv}"></td>
+			<td><a th:href="'/univ/'+${univ.kodeUniv}"> Detail</a></td>
+		
+		</tr>
+
+
+		</div>
+
+	</table>
+</body>
+</html>

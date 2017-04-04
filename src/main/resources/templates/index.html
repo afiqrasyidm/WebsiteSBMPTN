@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:include="header :: 'head'">
+
+
+
+</head>
+
+<body>
+
+	<div th:include="header :: 'header'"></div>
+
+
+
+
+	<div class="login-page">
+		<div class="form">
+			
+			<form class="login-form" action="/pengumuman/submit"
+			method="post">
+				
+				<label for="nomor_peserta">Nomor Peserta</label>
+						<input  placeholder="Masukan Nomor Peserta"
+				 type="text" name="nomorPeserta" required="required" />
+		
+				<button type="submit" name="action" value="submit"
+					class="btn btn-success">Submit</button>
+				
+			</form>
+		</div>
+	</div>
+
+</body>
+
+</html>
+

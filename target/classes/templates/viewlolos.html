@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="header :: 'head'">
+
+
+
+</head>
+
+<body>
+
+	<div th:include="header :: 'header'"></div>
+	<h3 th:text="'Nomor = ' + ${peserta.nomor}">peserta nomor</h3>
+	<h3 th:text="'Nama = ' + ${peserta.nama}">peserta nama</h3>
+	<h3
+		th:text="'Tanggal Lahir = ' + ${peserta.tgl_lahir.getDate()} + '-' +${peserta.tgl_lahir.getMonth()+1} + '-' +${peserta.tgl_lahir.getYear()+1900}">tgl
+		lahir peserta</h3>
+	<h3 th:text="'Umur = ' + ${umur}">Umur</h3>
+
+
+	<h3
+		th:text="'Lulus= ' + ${peserta.prodi.univ.namaUniv} + '-' +${peserta.prodi.namaProdi}">peserta
+		prodi</h3>
+
+	 <a th:href= "${peserta.prodi.univ.urlUniv}"  th:text= " ${peserta.prodi.namaProdi} +' '+${peserta.prodi.univ.namaUniv}"> </a> 
+
+	
+</body>
+</html>
+

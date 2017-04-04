@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head  th:include="header :: 'head'">
+
+
+
+</head>
+
+<body>
+
+	<div th:include="header :: 'header'">
+		
+
+
+	</div>
+	
+	
+	<h3 th:text="'Kode Univ = ' + ${univ.kodeUniv}">Univ Kode</h3>
+	<h3 th:text="'Nama Univ = ' + ${univ.namaUniv}">nama univ</h3>
+	 <a th:href=" ${univ.urlUniv}" th:text=" ${univ.urlUniv}"> </a>
+	 <br/>
+
+	<a th:href="'/univ/peserta/'+${univ.kodeUniv}"> Lihat Peserta yang Mendaftar</a><br />
+	<a th:href="'/univ/prodi/add/'+${univ.kodeUniv}" > Tambah Prodi</a><br />
+		
+	<h3>Prodi yang ada</h3>
+	
+	
+		
+	<table id="table" class="display" width="100%" cellspacing="0">
+		<thead>
+			<tr>
+				<th>Kode</th>
+				<th>Nama</th>
+				<th>Menu</th>
+
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<th>Kode</th>
+				<th>Nama</th>
+				<th>Menu</th>
+
+			</tr>
+		</tfoot>
+		
+		<div th:each="prodi,iterationStatus: ${univ.prodi}">
+		
+		<tr>
+			<td th:text="${prodi.kodeProdi}"></td>
+			<td th:text="${prodi.namaProdi}"></td>
+			<td><a th:href="'/prodi?kode=' +${prodi.kodeProdi}"> Detail</a></td>
+		
+		</tr>
+
+
+		</div>
+
+	</table>
+</body>
+</html>
+

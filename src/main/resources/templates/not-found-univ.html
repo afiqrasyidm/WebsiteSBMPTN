@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="header :: 'head'">
+
+
+
+</head>
+
+<body>
+
+	<div th:include="header :: 'header'"></div>
+	<h1>Univ not found</h1>
+	<h3 th:text="'Nomor Univ ' + ${kodeUniv}+' tidak ada'"></h3>
+</body>
+</html>
